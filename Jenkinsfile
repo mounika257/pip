@@ -5,31 +5,23 @@ pipeline {
     }
 
     stages {
-        stage ('Compile Stage') {
+        stage ('git clone') {
 
             steps {
                  
-                    bat 'mvn clean compile'
+                    git branch:master url: https://github.com/mounika257/pip.git
                 
             }
         }
 
-        stage ('Testing Stage') {
+        stage ('build') {
 
             steps {
                 
-                    bat 'mvn test'
+                    sh "mvn install"
                 
             }
         }
 
 
-        stage ('Install Stage') {
-            steps {
-                
-                    bat 'mvn install'
-                
-            }
-        }
-    }
-}
+
