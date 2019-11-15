@@ -9,7 +9,7 @@ pipeline {
 
             steps {
                  
-                    git branch:master url: https://github.com/mounika257/pip.git
+                    git credentialsId: 'git', url: 'https://github.com/mounika257/pip.git'
                 
             }
         }
