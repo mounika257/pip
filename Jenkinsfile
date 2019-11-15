@@ -19,10 +19,11 @@ pipeline {
 
             steps {
                 
-                    sh "mvn install"
+                    sh "mvn clean install"
                 
             }
         }
+	    
     }
 }
 
